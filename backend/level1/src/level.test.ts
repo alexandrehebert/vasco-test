@@ -1,12 +1,12 @@
-import { createContext, appRouter } from "./app";
+import { appRouter, createContext } from "./app";
 
 // =======================
 // DO NOT MODIFY THIS FILE
 // =======================
 
-describe("Level 1", () => {
+describe("Level 1/level", () => {
   test("renders targets for a month", async () => {
-    const ctx = await createContext({} as any);
+    const ctx = await createContext();
     const caller = appRouter.createCaller(ctx);
 
     const perMonth = await caller.query("targets.perMonth", {
