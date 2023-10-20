@@ -5,9 +5,7 @@ import { z } from "zod";
 // Context
 // =======
 
-export const createContext = (ctx: trpcExpress.CreateExpressContextOptions) => {
-  return ctx;
-};
+export const createContext = async (ctx: Partial<trpcExpress.CreateExpressContextOptions> = {}) => ctx
 type Context = trpc.inferAsyncReturnType<typeof createContext>;
 
 function createRouter() {

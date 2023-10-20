@@ -4,7 +4,7 @@ import { appRouter, createContext } from "./app";
 // DO NOT MODIFY THIS FILE
 // =======================
 
-describe("Level 1/level", () => {
+describe("Level 1/app", () => {
   test("renders targets for a month", async () => {
     const ctx = await createContext();
     const caller = appRouter.createCaller(ctx);
