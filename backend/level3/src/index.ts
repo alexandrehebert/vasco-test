@@ -1,7 +1,8 @@
 import * as trpcExpress from "@trpc/server/adapters/express";
 import express from "express";
 
-import { appRouter, createContext } from "./app";
+import { createContext } from "vm";
+import { appRouter } from "./app";
 
 export async function main() {
   const app = express();
