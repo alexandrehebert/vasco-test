@@ -1,4 +1,4 @@
 
-export function roundTo3Decimals(rate: number) {
-  return Math.round(rate * 1000) / 1000
+export function roundTo(rate: number, decimals = 3) {
+  return Math.round(rate * (10 ** decimals)) / (10 ** decimals)
 }
