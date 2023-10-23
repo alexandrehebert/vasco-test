@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { createRouter } from "../utils/trpc";
+import { createRouter } from "../helpers/trpc";
 import {
   quarterlyTarget
 } from "../application/targets/use-cases/quarterly";

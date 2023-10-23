@@ -1,5 +1,5 @@
 import { appRouter } from "./app";
-import { createContext } from "./utils/trpc";
+import { createContext } from "./helpers/trpc";
 
 // =======================
 // DO NOT MODIFY THIS FILE

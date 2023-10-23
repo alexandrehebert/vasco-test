@@ -5,7 +5,7 @@ import { QuarterlyTargetInput, QuarterlyTargetOutput } from "../domain/dto";
 import { Target } from "../domain/model";
 import { computeAcquisitionTarget } from "./teams/acquisition-target";
 import { computeExpansionTarget } from "./teams/expansion-target";
-import { roundTo } from "../../../utils/number";
+import { roundTo } from "../../../helpers/number";
 
 function computeQuarterlyRecurringRevenue(quarterTargets: Target[]) {
   return quarterTargets.reduce((acc, { recurringRevenue }) => acc + recurringRevenue, 0) / 3
