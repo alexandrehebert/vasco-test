@@ -9,10 +9,10 @@ import {
 import { computeAcquisitionTarget } from "./teams/acquisition-target";
 import { computeExpansionTarget } from "./teams/expansion-target";
 
-export function monthlyTarget(filters: MonthlyTargetInput): MonthlyTargetOutput {
-  const target = queryTargetForMonth(filters.month, filters.year)
+export function monthlyTarget({ month, year }: MonthlyTargetInput): MonthlyTargetOutput {
+  const target = queryTargetForMonth(month, year)
   if (!target) return {}
-  const previousTarget = queryPreviousMonthTarget(filters.month, filters.year)
+  const previousTarget = queryPreviousMonthTarget(month, year)
   const { churnRate, downgradeRate, upgradeRate, ...additionalTargetFields } = target
   return {
     churnRate: churnRate / 100,

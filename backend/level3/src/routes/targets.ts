@@ -10,7 +10,7 @@ import {
 export const targetsRouter = createRouter()
   .query("perMonth", {
     input: z.object({ month: z.number().gte(1).lte(12), year: z.number() }),
-    // TODO refactor and use it as dto type
+    // TODO refactor and use it as inferred dto type
     // output: z.union([z.object({
     //   acquisitionTarget: z.number(),
     //   expansionTarget: z.number()
@@ -19,7 +19,7 @@ export const targetsRouter = createRouter()
   })
   .query("perQuarter", {
     input: z.object({ quarter: z.number().gte(1).lte(4), year: z.number() }),
-    // TODO refactor and use it as dto type
+    // TODO refactor and use it as inferred dto type
     // output: z.union([z.object({
     //   acquisitionTarget: z.number(),
     //   expansionTarget: z.number()

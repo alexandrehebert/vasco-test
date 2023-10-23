@@ -22,11 +22,14 @@ function computeQuarterlyRate(rate: "churnRate" | "downgradeRate" | "upgradeRate
   return computeQuarterlyAmountForRate(rate, quarterTargets) / recurringRevenue
 }
 
-export function quarterlyTarget(filters: QuarterlyTargetInput): QuarterlyTargetOutput {
-  const lastTargetBeforeQuarter = queryLastTargetBeforeQuarter(filters.quarter, filters.year) || {
+export function quarterlyTarget({
+  quarter,
+  year
+}: QuarterlyTargetInput): QuarterlyTargetOutput {
+  const lastTargetBeforeQuarter = queryLastTargetBeforeQuarter(quarter, year) || {
     recurringRevenue: 100000,
   }
-  const targets = querySortedTargetsForQuarter(filters.quarter, filters.year)
+  const targets = querySortedTargetsForQuarter(quarter, year)
   const targetsWithLast = [lastTargetBeforeQuarter, ...targets]
   if (!targets.length) return {}
 
@@ -48,6 +51,7 @@ export function quarterlyTarget(filters: QuarterlyTargetInput): QuarterlyTargetO
     upgradeRate: roundTo(upgradeQuarterlyRate, 3),
     acquisitionTarget,
     expansionTarget,
-    ...filters
+    year,
+    quarter
   }
 }
